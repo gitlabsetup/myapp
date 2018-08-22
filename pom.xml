@@ -4,20 +4,8 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>2.0-SNAPSHOT</version>
   <name>my-app</name>
-  <repositories>
-    <repository>
-      <id>my-repo2</id>
-      <name>private</name>
-      <url>http://ec2-13-233-16-34.ap-south-1.compute.amazonaws.com:8081/nexus/content/groups/private/</url>
-    </repository>
-    <repository>
-      <id>my-repo1</id>
-      <name>your custom repo</name>
-      <url>http://maven.apache.org</url>
-    </repository>
-</repositories> 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -25,18 +13,29 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+<dependency>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>2.0-SNAPSHOT</version>
+</dependency>
   </dependencies>
+<repositories>
+<repository>
+<id>private</id>
+<name>private</name>
+<url>http://ec2-18-222-143-176.us-east-2.compute.amazonaws.com:8081/nexus/content/groups/private/</url>
+</repository>
+</repositories>
 <distributionManagement>
-    <repository>
+<repository>
       <id>mavenlab</id>
       <name>mavenlab</name>
-      <url>http://ec2-18-216-58-192.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/mavenlab/</url>
-    </repository>
-    <snapshotRepository>
-      <id>mavenlab-snapshot</id>
-      <name>mavenlab-snapshot</name>
-      <url>http://ec2-18-216-58-192.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/mavenlab-snapshot/</url>
-    </snapshotRepository>
+      <url>http://ec2-18-222-143-176.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/mavenlab/</url>
+</repository>
+<snapshotRepository>
+<id>mavenlab-snapshot</id>
+<name>mavenlab-snapshot</name>
+<url>http://ec2-18-222-143-176.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/mavenlab-snapshot/</url>
+</snapshotRepository>
 </distributionManagement>
-
 </project>
